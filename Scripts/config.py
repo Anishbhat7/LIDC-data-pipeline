@@ -1,0 +1,5 @@
+S3_BUCKET = "your-s3-bucket-name"
+ACCESS_KEY = "your-access-key"
+SECRET_KEY = "your-secret-key"
+DATA_DIR = "./data"
+DB_PATH = "./metadata.db"

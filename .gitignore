@@ -1,0 +1,5 @@
+Data
+myenv
+Notebooks
+*.db
+__pycache__
