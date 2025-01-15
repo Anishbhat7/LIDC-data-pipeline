@@ -3,7 +3,8 @@ import shutil
 import pydicom
 
 # Define the root directory of your current data structure
-root_dir = r"D:\lidc_small_dset\lidc_small_dset"
+root_dir = r"/Users/anishbhat/code/assignments/LIDC-data-pipeline/"
+output_dir = r"/Users/anishbhat/code/assignments/LIDC-data-pipeline/new-structure/"
 
 # Function to extract metadata from DICOM file
 def extract_metadata(dicom_file):
@@ -18,7 +19,7 @@ def extract_metadata(dicom_file):
     return patient_id, study_instance_uid, series_instance_uid
 
 # Function to create the new folder structure
-def create_new_structure(src_folder):
+def create_new_structure(src_folder, output_folder):
     # Iterate over the original folder structure
     for root, dirs, files in os.walk(src_folder):
         for file in files:
@@ -30,7 +31,7 @@ def create_new_structure(src_folder):
                 patient_id, study_instance_uid, series_instance_uid = extract_metadata(dicom_file)
 
                 # Define the new folder path
-                new_folder = os.path.join(root_dir, patient_id, study_instance_uid, series_instance_uid)
+                new_folder = os.path.join(output_folder, patient_id, study_instance_uid, series_instance_uid)
 
                 # Create the new folder structure if it does not exist
                 if not os.path.exists(new_folder):
@@ -44,4 +45,4 @@ def create_new_structure(src_folder):
                 print(f"Moved: {dicom_file} -> {destination}")
 
 # Run the transformation
-create_new_structure(root_dir)
+create_new_structure(root_dir, output_dir)

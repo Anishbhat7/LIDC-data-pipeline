@@ -3,3 +3,6 @@ myenv
 Notebooks
 *.db
 __pycache__
+lidc_small_dset*
+devfiles
+venv
