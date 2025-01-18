@@ -1,9 +1,9 @@
-Data
+# Data
 myenv
 Notebooks
 *.db
 __pycache__
-lidc_small_dset*
+lidc_small_dset.zip
 devfiles
 venv
 *.xlsx
